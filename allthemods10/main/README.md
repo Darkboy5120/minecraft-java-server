@@ -159,3 +159,16 @@ Server data is stored in a Docker volume named `minecraft_data`. This includes:
 - Plugins/mods (if applicable)
 
 The data persists even when the container is recreated.
+
+## Server mods configuration
+
+### ftbchunks
+There is a force loading setting on the file `/data/config/ftbchunks-world.snbt`.
+
+We have to set `force_load_mode` to `always`.
+
+We use nano to manually update this value, we have to find a automatic way to do it after every update.\
+Also we make a copy of the world in case something wents wrong:
+   `docker cp <container_name_or_id>:<path_in_container> <path_on_host>`
+
+For updates we have to set `FORCE_GENERIC_PACK_UPDATE=true` once to force the update, otherwise we will have the same modpack version

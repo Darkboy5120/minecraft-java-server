@@ -15,13 +15,16 @@ services:
     environment:
       # Override any environment variables here if needed
       # or use the .env file for customization
-      TZ: "America/New_York"  # Set your timezone
+      TZ: "America/Mexico_City"  # Set your timezone
     stdin_open: true
     tty: true
     # Resource limits based on environment variables
     deploy:
       resources:
         limits:
+          memory: ${MEMORY:-2G}
+          cpus: '${CPU_LIMIT:-2.0}'
+        reservations:
           memory: ${MEMORY:-2G}
           cpus: '${CPU_LIMIT:-2.0}'
 
