@@ -164,6 +164,8 @@ The data persists even when the container is recreated.
 
 Modpacks engine version may be wrong (neoforge, forge, fabric), try updating engine env variable with a compatible version with your modpack.
 
+With `FORCE_GENERIC_PACK_UPDATE=false`, the container typically skips downloading and applying packs if it detects they are already applied, saving startup time, so every time we want to re-install the current modpack version or refresh the config/mods/etc files we should set that variable to `true`.
+
 ## Server mods configuration
 
 ### ftbchunks
