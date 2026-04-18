@@ -160,6 +160,10 @@ Server data is stored in a Docker volume named `minecraft_data`. This includes:
 
 The data persists even when the container is recreated.
 
+## Infinite re-installing loop
+
+Modpacks engine version may be wrong (neoforge, forge, fabric), try updating engine env variable with a compatible version with your modpack.
+
 ## Server mods configuration
 
 ### ftbchunks
